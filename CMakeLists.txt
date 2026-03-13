@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(geez)
+project(TFLine)
 
 # Find Geant4
 find_package(Geant4 REQUIRED ui_all vis_all)
@@ -12,22 +12,18 @@ include(${Geant4_USE_FILE})
 file(GLOB SOURCES "src/*.cc")
 
 # Executable
-add_executable(geez ${SOURCES})
+add_executable(TFLine ${SOURCES})
 
 # Include directories 
-target_include_directories(geez PRIVATE
+target_include_directories(TFLine PRIVATE
 include
     ${Geant4_INCLUDE_DIRS}      # Geant4 headers
-    include  # Your headers
-    /home/cheri/dark/include/
-        /home/cheri/dark/include/G4DarkBreM
-
 )
 
 
 
 # Link libraries
-target_link_libraries(geez ${Geant4_LIBRARIES})
+target_link_libraries(TFLine ${Geant4_LIBRARIES})
 
 # C++ standard
-set_target_properties(geez PROPERTIES CXX_STANDARD 17)
+set_target_properties(TFLine PROPERTIES CXX_STANDARD 17)
